@@ -1,6 +1,10 @@
 # Flask-Mold #
 
-Flask Application Boilerplate
+**Flask Application Boilerplate**
+
+Boilerplate codes to help getting started with [http://flask.pocoo.org](Flask) faster.
+Batteries included. Manage database migration with [http://pypi.python.org/pypi/alembic](Alembic).
+
 
 ### Get Started ###
 
@@ -144,6 +148,7 @@ Run the server
 
 	python manage.py server
 
+Point your browser to http://localhost:5000
 
 #### TODO ####
 
