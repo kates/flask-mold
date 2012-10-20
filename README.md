@@ -2,8 +2,8 @@
 
 **Flask Application Boilerplate**
 
-Boilerplate codes to help getting started with [http://flask.pocoo.org](Flask) faster.
-Batteries included. Manage database migration with [http://pypi.python.org/pypi/alembic](Alembic).
+Boilerplate codes to help getting started with [Flask](http://flask.pocoo.org) faster.
+Batteries included. Manage database migration with [Alembic](http://pypi.python.org/pypi/alembic).
 
 
 ### Get Started ###
