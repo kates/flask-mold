@@ -8,7 +8,7 @@ def create_app(app):
 	app.config.from_object(config)
 
 	db.init_app(app)
-	db.create_all()
+	#db.create_all()
 
 	for bp in config.BLUEPRINTS:
 		module = __import__("blueprints.%s.blueprint" % bp)
