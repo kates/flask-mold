@@ -1,5 +1,6 @@
 import os
 import subprocess
+import errno
 
 from flask import Flask
 from flask.ext.script import Manager
@@ -10,6 +11,8 @@ from alembic.config import Config
 import config
 from app import create_app
 from lib.gunicorn_app import GunicornApp
+from lib.utils import mkdir_p
+from lib.utils import touch
 
 alembic_config = Config(os.path.realpath(os.path.dirname(__name__)) + "/alembic.ini")
 
@@ -53,6 +56,14 @@ def migration(message):
 	"""Create migration file"""
 	command.revision(alembic_config, message=message)
 
+@manager.command
+def blueprint(name, path=None, template=None):
+	"""create blueprint structure"""
+	template = template or "templates"
+	path = path or name
+	mkdir_p("blueprints/%s/%s" % (name, template,))
+	touch("blueprints/%s/__init__.py" % name)
+	touch("blueprints/%s/blueprint.py" % name)
 
 if __name__ == "__main__":
 	manager.run()
