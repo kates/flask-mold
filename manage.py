@@ -14,6 +14,7 @@ from models import db
 from lib.gunicorn_app import GunicornApp
 from lib.utils import mkdir_p
 from lib.utils import touch
+from lib.utils import blueprint_template
 
 alembic_config = Config(os.path.realpath(os.path.dirname(__name__)) + "/alembic.ini")
 
@@ -58,13 +59,11 @@ def migration(message):
 	command.revision(alembic_config, message=message)
 
 @manager.command
-def blueprint(name, path=None, template=None):
+def blueprint(name, path=None, templates=None):
 	"""create blueprint structure"""
-	template = template or "templates"
+	templates = templates or "templates"
 	path = path or name
-	mkdir_p("blueprints/%s/%s" % (name, template,))
-	touch("blueprints/%s/__init__.py" % name)
-	touch("blueprints/%s/blueprint.py" % name)
+	blueprint_template(name, templates)
 
 @manager.shell
 def make_shell_context():

@@ -10,9 +10,9 @@ def create_app(app):
 	db.init_app(app)
 	#db.create_all()
 
-	for bp in config.BLUEPRINTS:
+	for bp, mount in config.BLUEPRINTS:
 		module = __import__("blueprints.%s.blueprint" % bp)
-		app.register_blueprint(getattr(module, bp).blueprint.view)
+		app.register_blueprint(getattr(module, bp).blueprint.view, url_prefix=mount)
 	return app
 
 if __name__ == "__main__":
