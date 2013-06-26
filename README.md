@@ -86,7 +86,11 @@ Create a blueprint inside blueprints with the following structure
 	└── templates
 	    └── index.html
 
-Write the blueprint
+by running the blueprint generator
+
+	python manage.py blueprint home
+
+Update the blueprint
 
 	# in blueprints/home/blueprint.py
 
@@ -149,6 +153,27 @@ Run the server
 	python manage.py server
 
 Point your browser to http://localhost:5000
+
+##### Shell #####
+
+The manage.py script includes a shell command that you can use to quickly view
+or manipulate your model.
+
+Running
+
+	python manage.py shell
+
+will put you into the python shell with you application and db context loaded.
+
+	>>> from models import User                    
+	>>> user = User()                              
+	>>> user.name = "John Doe"                     
+	>>> user.dept = "Finance"                      
+	>>> db.session.add(user)                       
+	>>> db.session.commit()                        
+	>>> users = User.query.all()                   
+	>>> [[user.name, user.dept] for user in users] 
+	[[u'John Doe', u'Finance']]                    
 
 #### TODO ####
 
