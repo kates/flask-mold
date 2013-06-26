@@ -3,13 +3,14 @@ import subprocess
 import errno
 
 from flask import Flask
-from flask.ext.script import Manager
+from flask.ext.script import Manager, Shell
 
 from alembic import command
 from alembic.config import Config
 
 import config
 from app import create_app
+from models import db
 from lib.gunicorn_app import GunicornApp
 from lib.utils import mkdir_p
 from lib.utils import touch
@@ -64,6 +65,10 @@ def blueprint(name, path=None, template=None):
 	mkdir_p("blueprints/%s/%s" % (name, template,))
 	touch("blueprints/%s/__init__.py" % name)
 	touch("blueprints/%s/blueprint.py" % name)
+
+@manager.shell
+def make_shell_context():
+	return dict(app=create_app(app), db=db)
 
 if __name__ == "__main__":
 	manager.run()
