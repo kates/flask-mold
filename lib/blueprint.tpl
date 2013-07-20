@@ -10,5 +10,5 @@ view = Blueprint("{{ name }}", __name__, template_folder="{{ templates }}")
 
 @view.route("/")
 def index():
-	return render_template("index.html", title="{{ name }}")
+    return render_template("index.html", title="{{ name }}")
 

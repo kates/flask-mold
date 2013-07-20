@@ -5,7 +5,13 @@ TEST_VERBOSITY = 2
 
 SQLALCHEMY_DATABASE_URI = "sqlite:///demo.db"
 
+SECRET_KEY = "this is my secret key"
+
 BLUEPRINTS = [
-	["home", "/"],
-	["about", "/about"],
-]
+    # ("home", "/"),
+    # ("users", "/users"),
+    ]
+
+PLUGINS = [
+        # "flask_login"
+        ]
