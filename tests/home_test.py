@@ -1,4 +1,4 @@
-from testcase import TestCase
+from lib.testcase import TestCase
 
 class HomeTest(TestCase):
     def test_home(self):

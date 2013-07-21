@@ -36,3 +36,7 @@ def blueprint_template(name, templates):
         with open(output_path, "w") as writer:
             writer.write(reader.read())
 
+def replace_alembic_env():
+    with open(os.path.sep.join(['lib', 'alembic_env.tpl']), 'r') as reader:
+        with open(os.path.sep.join(['alembic', 'env.py']), 'w') as writer:
+            writer.write(reader.read())

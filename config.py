@@ -4,14 +4,15 @@ APP_NAME = "flask-mold"
 TEST_VERBOSITY = 2
 
 SQLALCHEMY_DATABASE_URI = "sqlite:///demo.db"
+TEST_DB_URI = "sqlite:///test.db" # if you want to run tests
 
 SECRET_KEY = "this is my secret key"
 
 BLUEPRINTS = [
-    # ("home", "/"),
-    # ("users", "/users"),
+    #("home", "/"),
+    #("users", "/users"),
     ]
 
 PLUGINS = [
-        # "flask_login"
-        ]
+    #"flask_login",
+    ]

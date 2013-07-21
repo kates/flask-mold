@@ -5,6 +5,9 @@ import errno
 from flask import Flask
 from flask.ext.script import Manager, Shell
 
+#from alembic import command
+#from alembic.config import Config
+
 import config
 from app import create_app
 from models import db
@@ -65,5 +68,3 @@ def blueprint(name, path=None, templates=None):
 def make_shell_context():
     return dict(app=app, db=db)
 
-if __name__ == "__main__":
-    manager.run()
