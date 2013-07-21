@@ -1,21 +1,12 @@
-import os
-import subprocess
-import errno
-
 from flask import Flask
 from flask.ext.script import Manager, Shell
 
-#from alembic import command
-#from alembic.config import Config
-
 import config
-from app import create_app
+from lib.app import create_app
 from models import db
 from lib.gunicorn_app import GunicornApp
-from lib.utils import touch
 from lib.utils import blueprint_template
 from lib.migration import Migration
-
 
 app = create_app(Flask(config.APP_NAME))
 manager = Manager(app)
