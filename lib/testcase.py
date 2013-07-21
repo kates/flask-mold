@@ -1,6 +1,6 @@
 from flask import Flask
 import flask.ext.testing as testing
-from app import create_app
+from lib.app import create_app
 from lib.migration import Migration
 
 import config
