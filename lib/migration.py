@@ -17,8 +17,7 @@ class Migration(object):
         else:
             config = Config(
                     os.path.realpath(os.path.dirname(__name__)) + "/alembic.ini")
-        
-        config.set_main_option('sqlalchemy.url', app.config.get('SQLALCHEMY_DATABASE_URI'))
+
         self.alembic_config = config
 
     def init(self):
