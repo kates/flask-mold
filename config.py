@@ -9,10 +9,11 @@ TEST_DB_URI = "sqlite:///test.db" # if you want to run tests
 SECRET_KEY = "this is my secret key"
 
 BLUEPRINTS = [
+    #('blueprint', '/mountpoint'),
     #("home", "/"),
     #("users", "/users"),
     ]
 
 PLUGINS = [
-    #"flask_login",
+    'db',
     ]

@@ -3,7 +3,7 @@ from flask.ext.script import Manager, Shell
 
 import config
 from lib.app import create_app
-from models import db
+from plugins.db import db
 from lib.gunicorn_app import GunicornApp
 from lib.utils import blueprint_template
 from lib.migration import Migration

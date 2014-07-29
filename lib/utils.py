@@ -24,7 +24,7 @@ def blueprint_template(name, templates):
     touch("blueprints", name, "__init__.py")
 
     input_path = os.path.sep.join(["lib", "blueprint.tpl"])
-    output_path = os.path.sep.join(["blueprints", name, "blueprint.py"])
+    output_path = os.path.sep.join(["blueprints", name, "%s_blueprint.py" % name])
     with open(input_path, "r") as reader:
         template = Template(reader.read())
         with open(output_path, "w") as writer:
