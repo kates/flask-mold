@@ -92,14 +92,15 @@ by running the blueprint generator
 
 Update the blueprint
 
-	# in blueprints/home/blueprint.py
+	# in blueprints/home/home_blueprint.py
 
 	from flask import Blueprint
 	from flask import render_template
 	from flask import abort
 	from flask import request
 	from flask import redirect
-	from models import db
+  from flask import url_for
+	from plugins.db import db
 	from models import User
 
 	view = Blueprint("home", __name__, template_folder="templates")
@@ -153,6 +154,11 @@ Run the server
 	python manage.py server
 
 Point your browser to http://localhost:5000
+
+##### Plugins #####
+
+TODO: Flask extensions can be used directly but code may be organized through plugins.
+
 
 ##### Shell #####
 
