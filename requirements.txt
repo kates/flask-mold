@@ -1,6 +1,5 @@
 Flask==0.10.1
 Flask-SQLAlchemy==1.0
-Flask-Script==2.0.5
 Flask-Testing==0.4.1
 Jinja2==2.7.3
 Mako==1.0.0
@@ -8,7 +7,7 @@ MarkupSafe==0.23
 SQLAlchemy==0.9.6
 Werkzeug==0.9.6
 alembic==0.6.5
-gunicorn==19.0.0
+click==2.5
 itsdangerous==0.24
 twill==1.8.0
 unittest2==0.5.1

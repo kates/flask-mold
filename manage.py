@@ -1,4 +1,4 @@
-from lib.manager import manager
+from lib.manager import manage
 
 if __name__ == "__main__":
-    manager.run()
+    manage()

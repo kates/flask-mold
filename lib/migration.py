@@ -14,10 +14,11 @@ class Migration(object):
         if app.config.get('TESTING'):
             config = Config()
             config.set_main_option('script_location', 'alembic')
+            config.set_main_option('sqlalchemy.url', app.config.get('TEST_DB_URI'))
         else:
             config = Config(
                     os.path.realpath(os.path.dirname(__name__)) + "/alembic.ini")
-
+            config.set_main_option('sqlalchemy.url', app.config.get('SQLALCHEMY_DATABASE_URI'))
         self.alembic_config = config
 
     def init(self):
