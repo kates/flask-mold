@@ -24,7 +24,7 @@ Update config.py
 	
 Initialize alembic
 
-	python manage.py alembic
+	python manage.py migration init
 
 Update the generated alembic.ini with the same db uri as in the config.py
 
@@ -34,7 +34,7 @@ Update the generated alembic.ini with the same db uri as in the config.py
 
 Create migration file
 
-	python manage.py migration create_users
+	python manage.py migration create create_users
 
 Edit the migration file created above
 
@@ -65,7 +65,7 @@ Edit the migration file created above
 
 Run the migration:
 
-	python manage.py migrate up
+	python manage.py migration up
 
 Update the models.py to reflect the db schema
 
@@ -151,7 +151,7 @@ Write the index.html
 
 Run the server
 
-	python manage.py server
+	python manage.py runserver
 
 Point your browser to http://localhost:5000
 
